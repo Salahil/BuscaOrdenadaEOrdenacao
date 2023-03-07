@@ -12,23 +12,20 @@ import java.io.IOException;
  *
  * @author User
  */
-// Lembre do Rock Lee todo Cagado!
-    // lembre do rock lee todo cagado
-    // lembre do rock lee todo cagado
-        // lembre do rock lee todo cagado
+public class BuscaDicionario {
+
+  
     
-    public class BuscaDicionario {
-     public static String[] vetorDicionarioPort = new String[307374];
-     public static String[] vetorDicionarioPortExibs = new String[307374];
-     public static String[] vetorPort(String[] Vetor){
+    public static void main(String[] args) {
+     String[] vetorDicionario = new String[307374];
     try{
      //String Arquivo = "C:\\Users\\User\\Documents\\NetBeansProjects\\buscaDicionario\\src\\arquivotexto\\Portuguese (Brazilian).dic.txt";
-     FileReader file = new FileReader("C:\\Users\\aluno\\Desktop\\BuscaOrdenadaEOrdenacao\\buscaDicionario\\src\\arquivotexto\\Portuguese (Brazilian).dic.txt");
+     FileReader file = new FileReader("C:\\buscaDicionario\\src\\arquivotexto\\Portuguese (Brazilian).dic.txt");
      BufferedReader buffRead = new BufferedReader(file);
      String linha = buffRead.readLine();
      int i = 0;
-     while (linha != null && i < vetorDicionarioPort.length) {
-                vetorDicionarioPort[i] = linha; 
+     while (linha != null && i < vetorDicionario.length) {
+                vetorDicionario[i] = linha; 
                 i++;
                 linha = buffRead.readLine(); // Lê a próxima linha do arquivo
             }
@@ -40,20 +37,9 @@ import java.io.IOException;
             System.err.println("Erro ao ler o arquivo: " + e.getMessage());
         }
    
-    for (String s : vetorDicionarioPort){
-        //int i = 0;
-        if (s != null){
-            int comprimento = s.length();
-            //vetorDicionarioPortExibs[i] = s;
-            //i = i + 1;
-            System.out.println(s + ": " + comprimento);
-            //System.out.println(vetorDicionarioPortExibs);
-            
+    for (String s : vetorDicionario) {
+            System.out.println(s);
         }
+    
     }
-        
-    return vetorDicionarioPort;
-     }
-    }
-
-//lembra do rock lee todo cagado!
+}
