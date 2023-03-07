@@ -21,7 +21,7 @@ public class buscaDicionario {
        
     try{
      //String Arquivo = "C:\\Users\\User\\Documents\\NetBeansProjects\\buscaDicionario\\src\\arquivotexto\\Portuguese (Brazilian).dic.txt";
-     FileReader file = new FileReader("C:\\Users\\User\\Documents\\NetBeansProjects\\buscaDicionario\\src\\arquivotexto\\Portuguese (Brazilian).dic.txt");
+     FileReader file = new FileReader("C:\\Users\\User\\Desktop\\BuscaOrdenadaEOrdenacao\\buscaDicionario\\src\\arquivotexto\\Portuguese (Brazilian).dic.txt");
      BufferedReader buffRead = new BufferedReader(file);
      String linha = buffRead.readLine();
      int i = 1;

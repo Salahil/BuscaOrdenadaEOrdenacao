@@ -13,11 +13,17 @@ public class Resultados {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // TODO code application logic here
-        String[] vetorDicionario = new String[307374];
         Ordenacao selec = new Ordenacao();
-        selec.vetorSelection(vetorDicionario);
+        buscaDicionario b = new buscaDicionario();
+        String[] vetorDicionario = new String[307374];
+        b.vetorPort(vetorDicionario); // preenche o vetor a partir do arquivo de texto
+        selec.vetorSelection(vetorDicionario); // ordena o vetor
+        ArquivoOrdenacao.salvarTXT(vetorDicionario,"SelectionSort");
+        for (String palavra : vetorDicionario) {
+        System.out.println(palavra);
+        }
         /*for (int i = 0; i < vetorDicionario.length; i++) {
          System.out.println(vetorDicionario[i]);
          }  */      

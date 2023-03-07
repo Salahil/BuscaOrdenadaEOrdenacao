@@ -14,30 +14,35 @@ import buscadicionario.buscaDicionario;
  */
 public class Ordenacao {
     
-    String[] vetorDicionario = new String[307374];
-       public String[] vetorSelection(String[] vetorDicionario){
-           
+    //String[] vetorDicionario = new String[307374];
+       public void vetorSelection(String[] vetorDicionario) throws Exception{
+          try{
            buscaDicionario busca = new buscaDicionario();
            busca.vetorPort(vetorDicionario);
            int posicaomenor, aux;
            
          for(int i = 0; i < vetorDicionario.length;i++ ){
-           posicaomenor = i;  
+           posicaomenor = i;   
            for(int j = i+1; j < vetorDicionario.length;j++){
-             if(vetorDicionario[j] != null && vetorDicionario[j].length() < vetorDicionario[posicaomenor].length()){ 
+             if(vetorDicionario[j].length() < vetorDicionario[posicaomenor].length()){ 
                posicaomenor = j;
             }
            }
+          if (posicaomenor != i){ 
            aux = posicaomenor;
            String temp = vetorDicionario[posicaomenor];
            vetorDicionario[posicaomenor] = vetorDicionario[i];
            vetorDicionario[i] = temp;
+          }
          } 
          for (int i = 0; i < vetorDicionario.length; i++) {
          System.out.println(vetorDicionario[i]);
         } 
-        return vetorDicionario; 
+        ArquivoOrdenacao.salvarTXT(vetorDicionario, "vetorSelection");
         
+           }catch (Exception e) {
+            throw new Exception("Erro ao executar o método selectionSort: "+e.getMessage());
+        }
     
   }
        
