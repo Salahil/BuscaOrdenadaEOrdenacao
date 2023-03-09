@@ -8,7 +8,7 @@ package BuscaBinar_e_BuscaOrden;
  *
  * @author Julio
  */
-public class BuscaOrdenadaClass { // para caso você procura algo em um vetor que não está ordenado
+public class BuscaSequencialClass { // para caso você procura algo em um vetor que não está ordenado... o q provavelmente não vai ser o caso
     public int buscaSequencialSemOrdenacao (String[] vetorDeBusca, String parametroDeBusca){
         for (int indice = 0; indice < vetorDeBusca.length; indice++){
             if (vetorDeBusca[indice].equals(parametroDeBusca)) return indice; //retorna a posição do vetor que você procura
